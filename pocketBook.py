@@ -1,5 +1,4 @@
 
-item = []
 def num_of_entries(i):
     """
     Counts number of entries
@@ -10,6 +9,10 @@ def num_of_entries(i):
     if i != 0:
         count = i
         return i
+
+def str_to_list(string):
+    li = list(string.split(" "))
+    return li
 
 def file_creator(f, l):
     """
@@ -28,7 +31,7 @@ def file_creator(f, l):
 
 ##Need something for encryption as well as removing items from text/crossing off or ticking. Whichever is possible. 
 ##Also some sort of reminder function that works with time in OS module
-
+item = []
 c = num_of_entries(input("How many entries?\n#:"))
 c-=1
 print("Please input each task")
@@ -39,8 +42,9 @@ while len(item) <= c:
 item = '\n'.join(item)
 istr = str(item)
 nl = "\n".join(istr)
-print(istr)
+print(str_to_list(istr))
 file_creator("entries.txt", istr)
+#print(ilist)
 
 
 
